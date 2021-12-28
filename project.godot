@@ -1,0 +1,55 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://Entities/Coin/Coin.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/Player.gd"
+}, {
+"base": "Area2D",
+"class": "PowerupExtraJump",
+"language": "GDScript",
+"path": "res://Entities/PowerupExtraJump/PowerupExtraJump.gd"
+} ]
+_global_script_class_icons={
+"Coin": "",
+"Player": "",
+"PowerupExtraJump": ""
+}
+
+[application]
+
+config/name="TutorialProject"
+run/main_scene="res://Levels/TestLevel.tscn"
+config/icon="res://Defaults/icon.png"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
+window/size/resizable=false
+
+[global]
+
+res=false
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://Defaults/default_env.tres"
