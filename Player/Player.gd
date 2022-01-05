@@ -18,6 +18,8 @@ func _ready():
 
 func _physics_process(delta):
 	
+	var snap_vector = Vector2.DOWN * 20
+	
 	momentum += horizontal_movement(delta)
 	momentum += gravity(delta)
 	
@@ -27,10 +29,13 @@ func _physics_process(delta):
 	if(can_jump()):
 		jumps_left = jumps_left - 1
 		momentum.y = Vector2.UP.y * jump_strength
+		snap_vector = Vector2.ZERO
 	
 	momentum = clamp_x(momentum, movement_speed)
 	
-	momentum = self.move_and_slide(momentum, Vector2.UP)
+	
+	
+	momentum = self.move_and_slide_with_snap(momentum, snap_vector, Vector2.UP,  false, 4, 0.7, false)
 	pass
 
 func horizontal_movement(delta):

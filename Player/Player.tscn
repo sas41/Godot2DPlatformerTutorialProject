@@ -34,7 +34,7 @@ max_distance = Vector2( 400, 200 )
 
 [node name="Camera2D" type="Camera2D" parent="CameraTarget"]
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 1.5, 1.5 )
 process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 2.0

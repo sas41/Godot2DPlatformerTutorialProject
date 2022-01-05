@@ -10,10 +10,13 @@ func _ready():
 	pass
 
 func _physics_process(delta):
-	var target_position = player.momentum
-	var momentum_length = player.momentum.length()
+	var momentum_without_y = player.momentum
+	momentum_without_y.y = 0
+	
+	var target_position = momentum_without_y
+	var momentum_length = momentum_without_y.length()
 	
 	if (momentum_length > max_distance.length()):
-		target_position = player.momentum.normalized() * max_distance
-		
+		target_position = momentum_without_y.normalized() * max_distance
+	
 	self.position = target_position
