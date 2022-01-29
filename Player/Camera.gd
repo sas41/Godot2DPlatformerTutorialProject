@@ -1,6 +1,6 @@
 extends Node2D
 
-export(Vector2)var max_distance = Vector2(200, 100)
+export(Vector2)var max_distance = Vector2(50, 50)
 var player : Player = null
 
 func _ready():

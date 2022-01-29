@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Player/Player_Spriteframes.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Player/Camera.gd" type="Script" id=3]
-[ext_resource path="res://Kenney/Singles/Diamond/diamond_01.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 15.5
@@ -30,14 +29,9 @@ __meta__ = {
 
 [node name="CameraTarget" type="Node2D" parent="."]
 script = ExtResource( 3 )
-max_distance = Vector2( 400, 200 )
 
 [node name="Camera2D" type="Camera2D" parent="CameraTarget"]
 current = true
-zoom = Vector2( 1.5, 1.5 )
 process_mode = 0
 smoothing_enabled = true
 smoothing_speed = 2.0
-
-[node name="Diamond01" type="Sprite" parent="CameraTarget"]
-texture = ExtResource( 4 )

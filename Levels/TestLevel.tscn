@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Entities/Coin/Coin.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/TestLevel.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Levels/LevelGraphics/KenneyTiles.tres" type="TileSet" id=4]
 [ext_resource path="res://Entities/PowerupExtraJump/PowerupExtraJump.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Entities/MovingPlatform/MovingPlatform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Entities/Door/Door.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Platform Movement"
@@ -33,6 +34,7 @@ __meta__ = {
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
+z_index = 1
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 9, 9 )
 cell_custom_transform = Transform2D( 0, 0, 0, 0, 2, 2 )
@@ -63,9 +65,13 @@ position = Vector2( 430.743, 405.731 )
 scale = Vector2( 2, 2 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 6 )]
-position = Vector2( 212.571, 496.571 )
+position = Vector2( 200, 500 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform"]
 root_node = NodePath("../..")
 autoplay = "Platform Movement"
 "anims/Platform Movement" = SubResource( 1 )
+
+[node name="Door" parent="." instance=ExtResource( 7 )]
+position = Vector2( 450, 515 )
+z_index = -1
